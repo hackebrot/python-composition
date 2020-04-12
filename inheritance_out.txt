@@ -1,0 +1,18 @@
+📦 Simone goes to the movies. 🍿
+📦 Simone builds a robot. 🤖
+📦 Simone goes hiking. ⛰
+📦 Simone commutes to the office. 🏢
+📦 Simone is now working on Project 'Data Platform'. 📋
+📦 Simone drinks some water. 🚰
+📦 Simone commutes home. 🏡
+📈 Chelsea commutes to the office. 🏢
+📈 Chelsea is now working on Project 'Data Platform'. 📋
+📈 Chelsea drinks tea. 🍵
+📈 Chelsea commutes home. 🏡
+📝 Dave commutes to a local coffee shop. 🚌
+📝 Dave is now working on Project 'Data Platform'. 📋
+📝 Dave drinks some water. 🚰
+📝 Dave commutes home. 🏡
+📱 Marlene works from home. 🏡
+📱 Marlene is now working on Project 'Data Platform'. 📋
+📱 Marlene drinks tea. 🍵
