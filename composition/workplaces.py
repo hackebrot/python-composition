@@ -18,3 +18,12 @@ class Workplace(ABC):
     @abstractmethod
     def commute(self, person: str) -> Generator:
         """Subclasses define how a person commutes to the workplace."""
+
+
+class Office(Workplace):
+    @contextmanager
+    def commute(self, person: str) -> Generator:
+        """Commute to the office and back home."""
+        print(f"{person} commutes to the office. 🏢")
+        yield
+        print(f"{person} commutes home. 🏡")

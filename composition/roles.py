@@ -21,3 +21,16 @@ class Role(ABC):
     @abstractmethod
     def work_on_project(self, person: str, project: Project) -> None:
         """Subclasses define the work for the respective role."""
+
+
+class OperationsEngineer(Role):
+    """Role for team members with expertise in operations."""
+
+    def work_on_project(self, person: str, project: Project) -> None:
+        """Work on the given project."""
+        print(f"{person} maintains systems software for {project}. {self.expertise}")
+
+    @property
+    def expertise(self) -> str:
+        """Return the expertise for the operations engineer role."""
+        return "📦"

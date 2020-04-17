@@ -15,3 +15,9 @@ class StayHydrated(ABC):
     @abstractmethod
     def drink(self, person: str) -> None:
         """Subclasses define what a person drinks."""
+
+
+class DrinkWater(StayHydrated):
+    def drink(self, person: str) -> None:
+        """Drink some water."""
+        print(f"{person} drinks some water. 🚰")
