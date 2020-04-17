@@ -8,8 +8,8 @@ from __future__ import annotations
 
 from profiles import Profile
 from projects import Project
-from roles import OperationsEngineer
-from stay_hydrated import DrinkWater
+from roles import OperationsEngineer, DataScientist
+from stay_hydrated import DrinkWater, DrinkTea
 from teams import TeamMember
 from workplaces import Office
 
@@ -21,6 +21,16 @@ def new_operations_engineer(name: str, emoji: str) -> TeamMember:
         role=OperationsEngineer(),
         workplace=Office(),
         stay_hydrated=DrinkWater(),
+    )
+
+
+def new_data_scientist_who_likes_tea(name: str, emoji: str) -> TeamMember:
+    """Create a new team member with expertise in data science and drinks tea."""
+    return TeamMember(
+        profile=Profile(name=name, emoji=emoji),
+        role=DataScientist(),
+        workplace=Office(),
+        stay_hydrated=DrinkTea(),
     )
 
 
@@ -37,3 +47,6 @@ if __name__ == "__main__":
     )
 
     simone.work_on_project(data_platform)
+
+    chelsea = new_data_scientist_who_likes_tea(name="Chelsea", emoji="🐶")
+    chelsea.work_on_project(data_platform)

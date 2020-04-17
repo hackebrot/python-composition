@@ -34,3 +34,16 @@ class OperationsEngineer(Role):
     def expertise(self) -> str:
         """Return the expertise for the operations engineer role."""
         return "📦"
+
+
+class DataScientist(Role):
+    """Role for team members with expertise in data science."""
+
+    def work_on_project(self, person: str, project: Project) -> None:
+        """Work on the given project."""
+        print(f"{person} analyzes data to improve {project}. {self.expertise}")
+
+    @property
+    def expertise(self) -> str:
+        """Return the expertise for the data scientist role."""
+        return "📈"

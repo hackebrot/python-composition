@@ -21,3 +21,9 @@ class DrinkWater(StayHydrated):
     def drink(self, person: str) -> None:
         """Drink some water."""
         print(f"{person} drinks some water. 🚰")
+
+
+class DrinkTea(StayHydrated):
+    def drink(self, person: str) -> None:
+        """Drink some tea."""
+        print(f"{person} drinks tea. 🍵")
