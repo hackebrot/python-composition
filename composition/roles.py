@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
+
 from projects import Project
 
 
@@ -47,3 +48,16 @@ class DataScientist(Role):
     def expertise(self) -> str:
         """Return the expertise for the data scientist role."""
         return "📈"
+
+
+class ProjectManager(Role):
+    """Role for team members with expertise in project management."""
+
+    def work_on_project(self, person: str, project: Project) -> None:
+        """Work on the given project."""
+        print(f"{person} plans and oversees activities for {project}. {self.expertise}")
+
+    @property
+    def expertise(self) -> str:
+        """Return the expertise for the project manager role."""
+        return "📝"

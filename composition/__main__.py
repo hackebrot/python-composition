@@ -8,10 +8,10 @@ from __future__ import annotations
 
 from profiles import Profile
 from projects import Project
-from roles import OperationsEngineer, DataScientist
-from stay_hydrated import DrinkWater, DrinkTea
+from roles import DataScientist, OperationsEngineer, ProjectManager
+from stay_hydrated import DrinkTea, DrinkWater
 from teams import TeamMember
-from workplaces import Office
+from workplaces import Home, Office, Remote
 
 
 def new_operations_engineer(name: str, emoji: str) -> TeamMember:
@@ -34,8 +34,26 @@ def new_data_scientist_who_likes_tea(name: str, emoji: str) -> TeamMember:
     )
 
 
+def new_project_manager_who_works_remotely(
+    name: str, emoji: str, workplace: str
+) -> TeamMember:
+    """Create a new team member with expertise in project management."""
+
+    if workplace == "home":
+        workplace_instance = Home()
+    else:
+        workplace_instance = Remote(workplace)
+
+    return TeamMember(
+        profile=Profile(name=name, emoji=emoji),
+        role=ProjectManager(),
+        workplace=workplace_instance,
+        stay_hydrated=DrinkWater(),
+    )
+
+
 if __name__ == "__main__":
-    simone = new_operations_engineer(name="Simone", emoji="👸")
+    simone = new_operations_engineer(name="Simone", emoji="👸🏼")
 
     simone.go_to_the_movies()
     simone.build_a_robot()
@@ -46,7 +64,12 @@ if __name__ == "__main__":
         description="Platform providing datasets and data viewing tools.",
     )
 
-    simone.work_on_project(data_platform)
-
     chelsea = new_data_scientist_who_likes_tea(name="Chelsea", emoji="🐶")
+
+    dave = new_project_manager_who_works_remotely(
+        name="Dave", emoji="🧙🏽‍♂️", workplace="a local coffee shop"
+    )
+
+    simone.work_on_project(data_platform)
     chelsea.work_on_project(data_platform)
+    dave.work_on_project(data_platform)
