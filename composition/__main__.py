@@ -92,7 +92,14 @@ if __name__ == "__main__":
         name="Marlene", emoji="👩🏿‍💻", workplace="home"
     )
 
-    simone.work_on_project(data_platform)
-    dave.work_on_project(data_platform)
-    chelsea.work_on_project(data_platform)
-    marlene.work_on_project(data_platform)
+    team = [simone, dave, chelsea, marlene]
+
+    for team_member in team:
+        team_member.work_on_project(data_platform)
+
+    # Everyone is strogly recommended to work from home
+    for team_member in team:
+        team_member.workplace = Home()
+
+    for team_member in team:
+        team_member.work_on_project(data_platform)
