@@ -61,3 +61,16 @@ class ProjectManager(Role):
     def expertise(self) -> str:
         """Return the expertise for the project manager role."""
         return "📝"
+
+
+class MobileEngineer(Role):
+    """Role for team members with expertise in mobile platforms."""
+
+    def work_on_project(self, person: str, project: Project) -> None:
+        """Work on the given project."""
+        print(f"{person} develops mobile applications for {project}. {self.expertise}")
+
+    @property
+    def expertise(self) -> str:
+        """Return the expertise for the mobile engineer role."""
+        return "📱"
