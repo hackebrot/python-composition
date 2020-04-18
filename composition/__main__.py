@@ -18,69 +18,13 @@ from composition.stay_hydrated import DrinkTea, DrinkWater
 from composition.teams import TeamMember
 from composition.workplaces import Home, Office, Remote, Workplace
 
-
-def new_operations_engineer(name: str, emoji: str) -> TeamMember:
-    """Create a new team member with expertise in operations."""
-    return TeamMember(
-        profile=Profile(name=name, emoji=emoji),
+if __name__ == "__main__":
+    simone = TeamMember(
+        profile=Profile(name="Simone", emoji="👸🏼"),
         role=OperationsEngineer(),
         workplace=Office(),
         stay_hydrated=DrinkWater(),
     )
-
-
-def new_data_scientist_who_likes_tea(name: str, emoji: str) -> TeamMember:
-    """Create a new team member with expertise in data science and drinks tea."""
-    return TeamMember(
-        profile=Profile(name=name, emoji=emoji),
-        role=DataScientist(),
-        workplace=Office(),
-        stay_hydrated=DrinkTea(),
-    )
-
-
-def new_project_manager_who_works_remotely(
-    name: str, emoji: str, workplace: str
-) -> TeamMember:
-    """Create a new team member with expertise in project management."""
-
-    workplace_instance: Workplace
-
-    if workplace == "home":
-        workplace_instance = Home()
-    else:
-        workplace_instance = Remote(workplace)
-
-    return TeamMember(
-        profile=Profile(name=name, emoji=emoji),
-        role=ProjectManager(),
-        workplace=workplace_instance,
-        stay_hydrated=DrinkWater(),
-    )
-
-
-def new_mobile_engineer_who_works_remotely_and_likes_tea(
-    name: str, emoji: str, workplace: str
-) -> TeamMember:
-    """Create a new team member with expertise in mobile development."""
-
-    workplace_instance: Workplace
-
-    if workplace == "home":
-        workplace_instance = Home()
-    else:
-        workplace_instance = Remote(workplace)
-
-    return TeamMember(
-        profile=Profile(name=name, emoji=emoji),
-        role=MobileEngineer(),
-        workplace=workplace_instance,
-        stay_hydrated=DrinkTea(),
-    )
-
-
-if __name__ == "__main__":
-    simone = new_operations_engineer(name="Simone", emoji="👸🏼")
 
     simone.go_to_the_movies()
     simone.build_a_robot()
@@ -91,14 +35,25 @@ if __name__ == "__main__":
         description="Platform providing datasets and data viewing tools.",
     )
 
-    dave = new_project_manager_who_works_remotely(
-        name="Dave", emoji="🧙🏽‍♂️", workplace="a local coffee shop"
+    dave = TeamMember(
+        profile=Profile(name="Dave", emoji="🧙🏽‍♂️"),
+        role=ProjectManager(),
+        workplace=Remote(workplace="a local coffee shop"),
+        stay_hydrated=DrinkWater(),
     )
 
-    chelsea = new_data_scientist_who_likes_tea(name="Chelsea", emoji="🐶")
+    chelsea = TeamMember(
+        profile=Profile(name="Chelsea", emoji="🐶"),
+        role=DataScientist(),
+        workplace=Office(),
+        stay_hydrated=DrinkTea(),
+    )
 
-    marlene = new_mobile_engineer_who_works_remotely_and_likes_tea(
-        name="Marlene", emoji="👩🏿‍💻", workplace="home"
+    marlene = TeamMember(
+        profile=Profile(name="Marlene", emoji="👩🏿‍💻"),
+        role=MobileEngineer(),
+        workplace=Home(),
+        stay_hydrated=DrinkTea(),
     )
 
     team = [simone, dave, chelsea, marlene]
