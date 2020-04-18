@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 
-from person import Profile
+from composition.person import Profile
 
 
 class StayHydrated(ABC):

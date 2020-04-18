@@ -6,11 +6,11 @@
 
 from __future__ import annotations
 
-from person import Profile
-from project import Project
-from roles import Role
-from stay_hydrated import StayHydrated
-from workplaces import Workplace
+from composition.person import Profile
+from composition.project import Project
+from composition.roles import Role
+from composition.stay_hydrated import StayHydrated
+from composition.workplaces import Workplace
 
 
 class TeamMember:

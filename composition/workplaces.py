@@ -10,7 +10,7 @@ from abc import ABC, abstractmethod
 from contextlib import contextmanager
 from typing import Generator
 
-from person import Profile
+from composition.person import Profile
 
 
 class Workplace(ABC):
