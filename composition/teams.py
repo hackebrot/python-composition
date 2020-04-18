@@ -7,7 +7,7 @@
 from __future__ import annotations
 
 from person import Profile
-from projects import Project
+from project import Project
 from roles import Role
 from stay_hydrated import StayHydrated
 from workplaces import Workplace

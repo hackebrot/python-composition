@@ -9,7 +9,7 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 
 from person import Profile
-from projects import Project
+from project import Project
 
 
 class Role(ABC):
