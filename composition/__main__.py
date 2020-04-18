@@ -97,7 +97,7 @@ if __name__ == "__main__":
     for team_member in team:
         team_member.work_on_project(data_platform)
 
-    # Everyone is strogly recommended to work from home
+    # Everyone is strongly recommended to work from home
     for team_member in team:
         team_member.workplace = Home()
 
