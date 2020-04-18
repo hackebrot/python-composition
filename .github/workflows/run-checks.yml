@@ -14,10 +14,10 @@ jobs:
       image: python:3.7
     steps:
     - uses: actions/checkout@v2
+    - name: Install requirements
+      run: python -m pip install -r requirements.txt
     - name: Run inheritance example
       run: python -m inheritance
-    - name: Install mypy
-      run: python -m pip install --upgrade pip mypy
     - name: Run mypy
       run: mypy inheritance
 
@@ -27,9 +27,9 @@ jobs:
       image: python:3.7
     steps:
     - uses: actions/checkout@v2
+    - name: Install requirements
+      run: python -m pip install -r requirements.txt
     - name: Run composition example
       run: python -m composition
-    - name: Install mypy
-      run: python -m pip install --upgrade pip mypy
     - name: Run mypy
       run: mypy composition
