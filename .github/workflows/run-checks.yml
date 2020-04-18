@@ -1,0 +1,27 @@
+name: Run checks
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  run-inheritance:
+    runs-on: ubuntu-latest
+    container: 
+      image: python:3.7
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run inheritance example
+      run: python inheritance/
+
+  run-composition:
+    runs-on: ubuntu-latest
+    container: 
+      image: python:3.7
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run composition example
+      run: python composition/
