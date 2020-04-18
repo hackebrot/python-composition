@@ -6,7 +6,7 @@
 
 from __future__ import annotations
 
-from profiles import Profile
+from person import Profile
 from projects import Project
 from roles import Role
 from stay_hydrated import StayHydrated
@@ -28,21 +28,18 @@ class TeamMember:
         self.workplace = workplace
         self.stay_hydrated = stay_hydrated
 
-    def __str__(self) -> str:
-        return f"{self.profile.emoji} {self.profile.name}"
-
     def work_on_project(self, project: Project) -> None:
         """Start working on the given project."""
 
-        with self.workplace.commute(f"{self}"):
-            self.role.work_on_project(f"{self}", project)
-            self.stay_hydrated.drink(f"{self}")
+        with self.workplace.commute(self.profile):
+            self.role.work_on_project(self.profile, project)
+            self.stay_hydrated.drink(self.profile)
 
     def go_to_the_movies(self) -> None:
-        print(f"{self} goes to the movies. 🍿")
+        print(f"{self.profile} goes to the movies. 🍿")
 
     def go_hiking(self) -> None:
-        print(f"{self} goes hiking. ⛰")
+        print(f"{self.profile} goes hiking. ⛰")
 
     def build_a_robot(self) -> None:
-        print(f"{self} builds a robot. 🤖")
+        print(f"{self.profile} builds a robot. 🤖")

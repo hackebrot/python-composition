@@ -13,3 +13,6 @@ class Profile:
     def __init__(self, name: str, emoji: str):
         self.name = name
         self.emoji = emoji
+
+    def __str__(self) -> str:
+        return f"{self.emoji} {self.name}"

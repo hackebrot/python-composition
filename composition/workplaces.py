@@ -10,13 +10,15 @@ from abc import ABC, abstractmethod
 from contextlib import contextmanager
 from typing import Generator
 
+from person import Profile
+
 
 class Workplace(ABC):
     """Interface for workplaces."""
 
     @contextmanager
     @abstractmethod
-    def commute(self, person: str) -> Generator:
+    def commute(self, profile: Profile) -> Generator:
         """Subclasses define how a person commutes to the workplace."""
 
 
@@ -24,20 +26,20 @@ class Office(Workplace):
     """Workplace for team members working from the office."""
 
     @contextmanager
-    def commute(self, person: str) -> Generator:
+    def commute(self, profile: Profile) -> Generator:
         """Commute to the office and back home."""
-        print(f"{person} commutes to the office. 🏢")
+        print(f"{profile} commutes to the office. 🏢")
         yield
-        print(f"{person} commutes home. 🏡")
+        print(f"{profile} commutes home. 🏡")
 
 
 class Home(Workplace):
     """Workplace for team members working from home."""
 
     @contextmanager
-    def commute(self, person: str) -> Generator:
+    def commute(self, profile: Profile) -> Generator:
         """Get ready for work at home."""
-        print(f"{person} works from home. 🏡")
+        print(f"{profile} works from home. 🏡")
         yield
 
 
@@ -48,8 +50,8 @@ class Remote(Workplace):
         self.workplace = workplace
 
     @contextmanager
-    def commute(self, person: str) -> Generator:
+    def commute(self, profile: Profile) -> Generator:
         """Commute to the workplace and back home."""
-        print(f"{person} commutes to {self.workplace}. 🚌")
+        print(f"{profile} commutes to {self.workplace}. 🚌")
         yield
-        print(f"{person} commutes home. 🏡")
+        print(f"{profile} commutes home. 🏡")

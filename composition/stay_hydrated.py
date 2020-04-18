@@ -8,22 +8,24 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 
+from person import Profile
+
 
 class StayHydrated(ABC):
     """Interface for ways to stay hydrated."""
 
     @abstractmethod
-    def drink(self, person: str) -> None:
+    def drink(self, profile: Profile) -> None:
         """Subclasses define what a person drinks."""
 
 
 class DrinkWater(StayHydrated):
-    def drink(self, person: str) -> None:
+    def drink(self, profile: Profile) -> None:
         """Drink some water."""
-        print(f"{person} drinks some water. 🚰")
+        print(f"{profile} drinks some water. 🚰")
 
 
 class DrinkTea(StayHydrated):
-    def drink(self, person: str) -> None:
+    def drink(self, profile: Profile) -> None:
         """Drink some tea."""
-        print(f"{person} drinks tea. 🍵")
+        print(f"{profile} drinks tea. 🍵")

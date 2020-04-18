@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 
+from person import Profile
 from projects import Project
 
 
@@ -20,16 +21,16 @@ class Role(ABC):
         """Subclasses return the expertise of the respective role."""
 
     @abstractmethod
-    def work_on_project(self, person: str, project: Project) -> None:
+    def work_on_project(self, profile: Profile, project: Project) -> None:
         """Subclasses define the work for the respective role."""
 
 
 class OperationsEngineer(Role):
     """Role for team members with expertise in operations."""
 
-    def work_on_project(self, person: str, project: Project) -> None:
+    def work_on_project(self, profile: Profile, project: Project) -> None:
         """Work on the given project."""
-        print(f"{person} maintains systems software for {project}. {self.expertise}")
+        print(f"{profile} maintains systems software for {project}. {self.expertise}")
 
     @property
     def expertise(self) -> str:
@@ -40,9 +41,9 @@ class OperationsEngineer(Role):
 class DataScientist(Role):
     """Role for team members with expertise in data science."""
 
-    def work_on_project(self, person: str, project: Project) -> None:
+    def work_on_project(self, profile: Profile, project: Project) -> None:
         """Work on the given project."""
-        print(f"{person} analyzes data to improve {project}. {self.expertise}")
+        print(f"{profile} analyzes data to improve {project}. {self.expertise}")
 
     @property
     def expertise(self) -> str:
@@ -53,9 +54,11 @@ class DataScientist(Role):
 class ProjectManager(Role):
     """Role for team members with expertise in project management."""
 
-    def work_on_project(self, person: str, project: Project) -> None:
+    def work_on_project(self, profile: Profile, project: Project) -> None:
         """Work on the given project."""
-        print(f"{person} plans and oversees activities for {project}. {self.expertise}")
+        print(
+            f"{profile} plans and oversees activities for {project}. {self.expertise}"
+        )
 
     @property
     def expertise(self) -> str:
@@ -66,9 +69,9 @@ class ProjectManager(Role):
 class MobileEngineer(Role):
     """Role for team members with expertise in mobile platforms."""
 
-    def work_on_project(self, person: str, project: Project) -> None:
+    def work_on_project(self, profile: Profile, project: Project) -> None:
         """Work on the given project."""
-        print(f"{person} develops mobile applications for {project}. {self.expertise}")
+        print(f"{profile} develops mobile applications for {project}. {self.expertise}")
 
     @property
     def expertise(self) -> str:

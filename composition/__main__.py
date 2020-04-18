@@ -6,7 +6,7 @@
 
 from __future__ import annotations
 
-from profiles import Profile
+from person import Profile
 from projects import Project
 from roles import DataScientist, MobileEngineer, OperationsEngineer, ProjectManager
 from stay_hydrated import DrinkTea, DrinkWater
