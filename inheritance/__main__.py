@@ -71,13 +71,13 @@ class TeamMember(Person):
         return f"{self.expertise} {default}"
 
     @contextlib.contextmanager
-    def commute(self) -> typing.Generator:
+    def commute(self) -> typing.Iterator[None]:
         """Commute to the office and back."""
         print(f"{self} commutes to the office. 🏢")
         yield
         print(f"{self} commutes home. 🏡")
 
-    def work_on_project(self, project) -> None:
+    def work_on_project(self, project: Project) -> None:
         """Start working on the given project."""
         with self.commute():
             print(f"{self} is now working on {project}. 📋")
@@ -117,7 +117,7 @@ class RemoteTeamMember(TeamMember):
         super().__init__(**kwargs)
 
     @contextlib.contextmanager
-    def commute(self) -> typing.Generator:
+    def commute(self) -> typing.Iterator[None]:
         """Stay at home or commute to the workplace and back."""
 
         if self.workplace == "home":
