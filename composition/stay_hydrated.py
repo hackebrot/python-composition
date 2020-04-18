@@ -6,26 +6,29 @@
 
 from __future__ import annotations
 
-from abc import ABC, abstractmethod
+from typing_extensions import Protocol
 
 from composition.person import Profile
 
 
-class StayHydrated(ABC):
+class StayHydrated(Protocol):
     """Interface for ways to stay hydrated."""
 
-    @abstractmethod
     def drink(self, profile: Profile) -> None:
         """Subclasses define what a person drinks."""
 
 
-class DrinkWater(StayHydrated):
+class DrinkWater:
+    """Interface for drinking water."""
+
     def drink(self, profile: Profile) -> None:
         """Drink some water."""
         print(f"{profile} drinks some water. 🚰")
 
 
-class DrinkTea(StayHydrated):
+class DrinkTea:
+    """Interface for drinking tea."""
+
     def drink(self, profile: Profile) -> None:
         """Drink some tea."""
         print(f"{profile} drinks tea. 🍵")
