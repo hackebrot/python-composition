@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run inheritance example
-      run: python inheritance/
+      run: python -m inheritance
 
   run-composition:
     runs-on: ubuntu-latest
@@ -24,4 +24,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run composition example
-      run: python composition/
+      run: python -m composition
