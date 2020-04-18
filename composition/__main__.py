@@ -6,12 +6,17 @@
 
 from __future__ import annotations
 
-from person import Profile
-from project import Project
-from roles import DataScientist, MobileEngineer, OperationsEngineer, ProjectManager
-from stay_hydrated import DrinkTea, DrinkWater
-from teams import TeamMember
-from workplaces import Home, Office, Remote
+from composition.person import Profile
+from composition.project import Project
+from composition.roles import (
+    DataScientist,
+    MobileEngineer,
+    OperationsEngineer,
+    ProjectManager,
+)
+from composition.stay_hydrated import DrinkTea, DrinkWater
+from composition.teams import TeamMember
+from composition.workplaces import Home, Office, Remote, Workplace
 
 
 def new_operations_engineer(name: str, emoji: str) -> TeamMember:
@@ -39,6 +44,8 @@ def new_project_manager_who_works_remotely(
 ) -> TeamMember:
     """Create a new team member with expertise in project management."""
 
+    workplace_instance: Workplace
+
     if workplace == "home":
         workplace_instance = Home()
     else:
@@ -56,6 +63,8 @@ def new_mobile_engineer_who_works_remotely_and_likes_tea(
     name: str, emoji: str, workplace: str
 ) -> TeamMember:
     """Create a new team member with expertise in mobile development."""
+
+    workplace_instance: Workplace
 
     if workplace == "home":
         workplace_instance = Home()

@@ -6,26 +6,24 @@
 
 from __future__ import annotations
 
-from abc import ABC, abstractmethod
+from typing_extensions import Protocol
 
-from person import Profile
-from project import Project
+from composition.person import Profile
+from composition.project import Project
 
 
-class Role(ABC):
+class Role(Protocol):
     """Interface for roles a team member can take."""
 
     @property
-    @abstractmethod
-    def expertise(self):
+    def expertise(self) -> str:
         """Subclasses return the expertise of the respective role."""
 
-    @abstractmethod
     def work_on_project(self, profile: Profile, project: Project) -> None:
         """Subclasses define the work for the respective role."""
 
 
-class OperationsEngineer(Role):
+class OperationsEngineer:
     """Role for team members with expertise in operations."""
 
     def work_on_project(self, profile: Profile, project: Project) -> None:
@@ -38,7 +36,7 @@ class OperationsEngineer(Role):
         return "📦"
 
 
-class DataScientist(Role):
+class DataScientist:
     """Role for team members with expertise in data science."""
 
     def work_on_project(self, profile: Profile, project: Project) -> None:
@@ -51,7 +49,7 @@ class DataScientist(Role):
         return "📈"
 
 
-class ProjectManager(Role):
+class ProjectManager:
     """Role for team members with expertise in project management."""
 
     def work_on_project(self, profile: Profile, project: Project) -> None:
@@ -66,7 +64,7 @@ class ProjectManager(Role):
         return "📝"
 
 
-class MobileEngineer(Role):
+class MobileEngineer:
     """Role for team members with expertise in mobile platforms."""
 
     def work_on_project(self, profile: Profile, project: Project) -> None:
