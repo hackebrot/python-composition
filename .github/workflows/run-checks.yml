@@ -16,6 +16,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run inheritance example
       run: python -m inheritance
+    - name: Install mypy
+      run: python -m pip install --upgrade pip mypy
+    - name: Run mypy
+      run: mypy inheritance
 
   run-composition:
     runs-on: ubuntu-latest
@@ -25,3 +29,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run composition example
       run: python -m composition
+    - name: Install mypy
+      run: python -m pip install --upgrade pip mypy
+    - name: Run mypy
+      run: mypy composition
