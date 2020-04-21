@@ -19,7 +19,7 @@ class Workplace(Protocol):
 
     @contextmanager
     def commute(self, profile: Profile) -> Iterator[None]:
-        """Subclasses define how a person commutes to the workplace."""
+        """Implementations define how a person commutes to the workplace."""
 
 
 class Office:

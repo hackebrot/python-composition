@@ -15,7 +15,7 @@ class StayHydrated(Protocol):
     """Interface for ways to stay hydrated."""
 
     def drink(self, profile: Profile) -> None:
-        """Subclasses define what a person drinks."""
+        """Implementations define what a person drinks."""
 
 
 class DrinkWater:
