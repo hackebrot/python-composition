@@ -16,7 +16,7 @@ from composition.roles import (
 )
 from composition.stay_hydrated import DrinkTea, DrinkWater
 from composition.teams import TeamMember
-from composition.workplaces import Home, Office, Remote, Workplace
+from composition.workplaces import Home, Office, Remote
 
 if __name__ == "__main__":
     simone = TeamMember(

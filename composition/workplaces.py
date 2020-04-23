@@ -7,9 +7,9 @@
 from __future__ import annotations
 
 from contextlib import contextmanager
-from typing import Generator, Iterator
+from typing import Iterator
 
-from typing_extensions import ContextManager, Protocol
+from typing_extensions import Protocol
 
 from composition.person import Profile
 
