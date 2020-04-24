@@ -150,17 +150,24 @@ if __name__ == "__main__":
     simone.build_a_robot()
     simone.go_hiking()
 
+    data_platform = Project(
+        board_name="Data Platform",
+        description="Platform providing datasets and data viewing tools.",
+    )
+
     chelsea = DataScientistWhoLikesTea(name="Chelsea")
     dave = ProjectManagerWhoWorksRemotely(name="Dave", workplace="a local coffee shop")
     marlene = MobileEngineerWhoWorksRemotelyAndLikesTea(
         name="Marlene", workplace="home"
     )
 
-    data_platform = Project(
-        board_name="Data Platform",
-        description="Platform providing datasets and data viewing tools.",
-    )
-    simone.work_on_project(data_platform)
-    chelsea.work_on_project(data_platform)
-    dave.work_on_project(data_platform)
-    marlene.work_on_project(data_platform)
+    team = [simone, dave, chelsea, marlene]
+
+    for team_member in team:
+        team_member.work_on_project(data_platform)
+
+    # Everyone is strongly recommended to work from home. What now? 😨
+    # Subclasses of RemoteTeamMember do have a workplace attribute,
+    # but is it really safe to overwrite that? Also, what's with folks
+    # who work from the office? The default commute() implementation
+    # does only support commuting to the office.
