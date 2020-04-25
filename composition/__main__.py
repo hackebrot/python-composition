@@ -26,9 +26,9 @@ if __name__ == "__main__":
         stay_hydrated=DrinkWater(),
     )
 
-    simone.go_to_the_movies()
-    simone.build_a_robot()
-    simone.go_hiking()
+    # simone.go_to_the_movies()
+    # simone.build_a_robot()
+    # simone.go_hiking()
 
     data_platform = Project(
         board_name="Data Platform",
@@ -58,12 +58,7 @@ if __name__ == "__main__":
 
     team = [simone, dave, chelsea, marlene]
 
-    for team_member in team:
-        team_member.work_on_project(data_platform)
-
-    # Everyone is strongly recommended to work from home
+    # Everyone is strongly recommended to work from home. What now? 😨
     for team_member in team:
         team_member.workplace = Home()
-
-    for team_member in team:
         team_member.work_on_project(data_platform)
