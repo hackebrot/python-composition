@@ -1,6 +1,7 @@
 # python-composition
 
-Code for my talk at the Python Pizza micro conference. 🧀🍅🧄🥦
+Code for my talk at the [Python Pizza][python pizza] micro conference.
+🧀🍅🧄🥦
 
 ## Requirements
 
@@ -26,3 +27,4 @@ of Conduct][code of conduct]. By participating in this project you agree to
 abide by its terms.
 
 [code of conduct]: /CODE_OF_CONDUCT.md
+[python pizza]: https://remote.python.pizza
